@@ -1,0 +1,18 @@
+untuk mengatasi gagal migrate database tambahkan script : 
+Schema::defaultStringLength(191);
+di dalam app/provider/appserviceprovider di bagian "public function boot()"
+hasile ngene :
+public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+
+
+gawe login multi user wee delok en website ini 
+https://mragus.com/autentikasi-user-menggunakan-role-dan-middleware-di-framework-laravel/
+ikuti semua langkah langkah e
+klau mau lagin liat dulu email sama pass di seedernya (UserSeeder)
+
+
+itu disetujui atau nggak pakek get id
+jadi id nya dipanggil trus di update
