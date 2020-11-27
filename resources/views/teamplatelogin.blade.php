@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<div class="main" style="background-image: url('css/teamplate_login/images/default.jpg')">
+<div class="main" style="background-image: url('css/teamplate_login/images/pupuk.jpg')">
     <div class="cover black" data-color="black"></div>
     <div class="container">
         <div class="content">

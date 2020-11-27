@@ -47,7 +47,18 @@
             </a>
         </li>
         @else
-            Driver
-        @endif    
+        <li class="nav-item ">
+            <a class="nav-link" href="{{url('/Peta')}}">
+                <i class="material-icons"></i>
+                <p>Rute</p>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+                <i class="material-icons"></i>
+                <p></p>
+            </a>
+        </li>
+        @endif
     @endif
 @endsection

@@ -36,6 +36,7 @@ Route::group(['middleware' => ['web', 'auth', 'roles']],function(){
     });
     Route::group(['roles'=>'Driver'],function(){
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/Peta', 'MapController@show')->name('peta');
     });
     Route::get('/home', 'HomeController@index')->name('home');
 });

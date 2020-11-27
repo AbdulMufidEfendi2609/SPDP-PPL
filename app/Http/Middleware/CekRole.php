@@ -16,16 +16,18 @@ class CekRole
     public function handle($request, Closure $next)
     {
         $roles = $this->CekRoute($request->route());
-        
+
         if ($request->user()->hasRole($roles) == "Manager Gudang") {
             return $next($request);
         } else {
-            if ($request->user()->hasRole($roles) == "Agen") {
+            }if ($request->user()->hasRole($roles) == "Agen") {
                 return $next($request);
             } else {
-                return $next($request);
+                } if (($request->user()->hasRole($roles) == "Driver") ){
+                    return $next($request);
+                } else {
+                    return $next($request);
             }
-        }
         return abort(503, 'Anda tidak memiliki hak akses');
     }
     private function CekRoute($route)
