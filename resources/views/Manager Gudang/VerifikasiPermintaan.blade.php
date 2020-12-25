@@ -20,9 +20,33 @@
     </a>
 </li>
 <li class="nav-item ">
-    <a class="nav-link" href="./typography.html">
+    <a class="nav-link" href="{{url('/StokPupuk')}}">
+      <i class="material-icons"></i>
+      <p>Stok Pupuk</p>
+    </a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="{{url('/TambahPengiriman')}}">
+      <i class="material-icons"></i>
+      <p>Tambah Pengiriman</p>
+    </a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="{{url('/RekapPengiriman')}}">
+      <i class="material-icons"></i>
+      <p>Rekap Pengiriman</p>
+    </a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="{{url('/DataDriver')}}">
         <i class="material-icons"></i>
-        <p></p>
+        <p>Data Driver</p>
+    </a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="{{url('/DataAgen')}}">
+        <i class="material-icons"></i>
+        <p>Data Agen</p>
     </a>
 </li>
 @endsection
@@ -39,7 +63,7 @@
           <th scope="col">Jumlah Permintaan</th>
           <th scope="col">Tanggal</th>
           <th scope="col">Status Verifikasi</th>
-          <th scope="col">Button</th>
+          <th scope="col">Button Verifikasi</th>
         </tr>
       </thead>
       <tbody>
@@ -59,25 +83,13 @@
               @csrf
                 <form action="{{url('/setuju')}}" method="GET">
                   <input type="hidden" name="id_transaksi" value="{{$T->id_transaksi}}">
-                  <button type="submit">Disetujui</button>
+                  <button type="submit"  style="background-color:green; border-radius:5px; color:white;">Disetujui</button>
                 </form>
 
                 <form action="{{url('/tolak')}}" method="GET">
                   <input type="hidden" name="id_transaksi" value="{{$T->id_transaksi}}">
-                  <button type="submit">Ditolak</button>
+                  <button type="submit" style="background-color:red; border-radius:5px; color:white;">Ditolak</button>
                 </form>
-            @else
-                @if ($T->status_verifikasi == 'Disetujui')
-                  <form action="{{url('/tolak')}}" method="GET">
-                    <input type="hidden" name="id_transaksi" value="{{$T->id_transaksi}}">
-                    <button type="submit">Ditolak</button>
-                  </form>
-                @else
-                  <form action="{{url('/setuju')}}" method="GET">
-                    <input type="hidden" name="id_transaksi" value="{{$T->id_transaksi}}">
-                    <button type="submit">Disetujui</button>
-                  </form>
-                @endif
             @endif
           </td>
         </tr>

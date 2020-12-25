@@ -40,5 +40,14 @@ class UserSeeder extends Seeder
             'Alamat'             => 'neroko',
             'no_telepon'          => '000011112222',
         ]);
+        DB::table('users')->insert([
+            'id'                 => '4',
+            'role_id'            => '2',
+            'name'               => 'Carolus',
+            'email'              => 'carolus@gmail.com',
+            'password'           => Hash::make('budiwedos'),
+            'Alamat'             => 'neroko',
+            'no_telepon'          => '000011112222',
+        ]);
     }
 }

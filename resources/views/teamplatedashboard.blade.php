@@ -17,7 +17,7 @@
   <link href="{{url('css/assets/css/material-dashboard.css?v=2.1.2')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{url('css/assets/demo/demo.css')}}" rel="stylesheet" />
-  @yield('scr')
+  @yield('head')
 </head>
 
 <body class="">
@@ -25,6 +25,7 @@
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="{{url('css/assets/img/sidebar-1.jpg')}}">
 
       <div class="logo"><a href="" class="simple-text logo-normal">
+        <img src="delivery-truck.png" alt="truck" style="width: 40px;">
           SPDP
         </a></div>
       <div class="sidebar-wrapper">
@@ -38,42 +39,18 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+            <a class="navbar-brand" href="javascript:;" style="font-size:25pt; font-weight:bold;">Dashboard</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification"></span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#"></a>
-                  <a class="dropdown-item" href="#"></a>
-                  <a class="dropdown-item" href="#"></a>
-                  <a class="dropdown-item" href="#"></a>
-                  <a class="dropdown-item" href="#"></a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
+                  <!-- <i class="material-icons">person</i> -->
+                  <img src="icons8-customer-48.png" alt="person">
                 </a>
+                <h5 style="font-weight: bold; font-size: 15pt; text-align: center;">{{auth()->user()->name}}</h5>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="{{url('/profil')}}">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
@@ -91,6 +68,7 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+          @yield('coba')
           <div class="row">
             @yield('konten')
           </div>
@@ -105,6 +83,7 @@
       </footer>
     </div>
   </div>
+
   <!--   Core JS Files   -->
   <script src="{{url('css/assets/js/core/jquery.min.js')}}"></script>
   <script src="{{url('css/assets/js/core/popper.min.js')}}"></script>
@@ -326,6 +305,7 @@
 
     });
   </script>
+  @yield('js')
 </body>
 
 </html>
